@@ -1,0 +1,38 @@
+<body  class="img">
+ <div style="text-align:center; margin-top: 60px;"> <input type="text" name="inputsearch" id="inputsearch" placeholder="search" class="form-controlsearch-field " aria-describedby="helpid" [(ngModel)]="text"></div> 
+    <h1 style="text-align: center ;color:white">VIEW TOTAL ROLES</h1>
+    <table class="table" style="margin-top: 60px ;background-color: white;">
+     <thead>
+        <tr>
+          <th [appSort]="role" data-order="desc" data-name="userId" scope="col"  >userId</th>
+          <th [appSort]="role" data-order="desc" data-name="id" scope="col">Id </th>
+    
+          <th  [appSort]="role" data-order="desc" data-name="title"scope="col">title</th>
+          <th [appSort]="role" data-order="desc" data-name="body" scope="col">Body </th>
+       
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of role |searchr:text " >
+    
+          <td>{{x.userId}}</td>
+          <td>{{x.id}}</td>
+          <td>{{x.title}}</td>
+          <td>{{x.body}}</td>
+   
+    
+          <td>
+            <button type="button" class="btn btn-primary" routerLink="/app-editusers/">Edit</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-info">Delete </button>
+         </td>
+        </tr>
+    
+    
+    </table>
+
+    </body>
+   
